@@ -1,0 +1,120 @@
+﻿<div [@routerTransition]>
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>{{ "HomePage" | localize }}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content px-2">
+    <div class="container-fluid">
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Open Issues</h3>
+            </div>
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Id</th>
+                    <th class="w-25">Title</th>
+                    <th class="w-25">Labels</th>
+                    <th>Date</th>
+                    <th>Opened by</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5452"
+                        target="_blank">
+                        5452
+                      </a>
+                    </td>
+                    <td>Angular UI migration to AdminLTE 3</td>
+                    <td>
+                      <span class="badge badge-secondary mx-1">
+                        module-zero-core-template
+                      </span>
+                      <span class="badge badge-primary mx-1">
+                        feature
+                      </span>
+                    </td>
+                    <td>11 days ago</td>
+                    <td>iyilm4z</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5391"
+                        target="_blank">
+                        5391
+                      </a>
+                    </td>
+                    <td>
+                      AbpCacheBase should lock the same object for sync and
+                      async
+                    </td>
+                    <td>
+                      <span class="badge badge-danger mx-1">
+                        bug
+                      </span>
+                      <span class="badge badge-success mx-1">
+                        pull request candidate
+                      </span>
+                    </td>
+                    <td>26 days ago</td>
+                    <td>acjh</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://github.com/aspnetboilerplate/aspnetboilerplate/issues/5390"
+                        target="_blank">
+                        5390
+                      </a>
+                    </td>
+                    <td>AbpCache sliding/absolute expire time</td>
+                    <td>
+                      <span class="badge badge-warning mx-1">
+                        breaking-change
+                      </span>
+                      <span class="badge badge-info mx-1">enhancement</span>
+                    </td>
+                    <td>27 days ago</td>
+                    <td>ryancyq</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p-table >
+      <ng-template pTemplate="header">
+ 
+          <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Quantity</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>tesdtest</td>
+              <td>{{ product }}</td>
+              <td>{{ product.category }}</td>
+              <td>teasdte</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  
+
+  </section>
+</div>
