@@ -1,4 +1,5 @@
-export class MenuItem {
+export class 
+MenuItem {
   id: number;
   parentId: number;
   label: string;

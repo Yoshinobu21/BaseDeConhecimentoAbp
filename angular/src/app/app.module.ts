@@ -15,6 +15,7 @@ import { SharedModule } from '@shared/shared.module';
 import { HomeComponent } from '@app/home/home.component';
 import { AboutComponent } from '@app/about/about.component';
 import { TableModule } from 'primeng/table'
+import { Button, ButtonModule } from 'primeng/button';
 // tenants
 import { TenantsComponent } from '@app/tenants/tenants.component';
 import { CreateTenantDialogComponent } from './tenants/create-tenant/create-tenant-dialog.component';
@@ -39,6 +40,9 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
+import { ArticleComponent } from './article/article.component';
+import { CreateArticleComponent } from './article/create-article/create-article.component';
+import { EditArticleComponent } from './article/edit-article/edit-article.component';
 
 @NgModule({
     declarations: [
@@ -68,7 +72,15 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
         SidebarComponent,
         SidebarLogoComponent,
         SidebarUserPanelComponent,
-        SidebarMenuComponent
+        SidebarMenuComponent,
+        ArticleComponent,
+        CreateArticleComponent,
+        EditArticleComponent,
+        // Article Components
+        ArticleComponent,
+        CreateArticleComponent,
+        EditArticleComponent,
+    
     ],
     imports: [
         CommonModule,
@@ -84,7 +96,8 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
         ServiceProxyModule,
         SharedModule,
         NgxPaginationModule,
-        TableModule
+        TableModule,
+        ButtonModule
     ],
     providers: []
 })

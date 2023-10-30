@@ -46,6 +46,7 @@
     "@angular/cli": "^15.0.3",
     "@angular/compiler-cli": "^15.0.3",
     "@angularclass/hmr": "^3.0.0",
+    "@schematics/angular": "^16.2.8",
     "@types/jasmine": "~4.3.1",
     "@types/lodash-es": "^4.17.6",
     "@types/moment-timezone": "^0.5.30",

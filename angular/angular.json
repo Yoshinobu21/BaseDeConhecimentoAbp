@@ -31,6 +31,8 @@
               }
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "node_modules/famfamfam-flags/dist/sprite/famfamfam-flags.css",
               "node_modules/sweetalert2/dist/sweetalert2.css",
               "src/assets/freeze-ui/freeze-ui.css",
@@ -155,20 +157,6 @@
               "src/assets/abp-web-resources/abp.freeze-ui.js",
               "node_modules/abp-web-resources/Abp/Framework/scripts/libs/abp.moment.js"
             ]
-          }
-        }
-      }
-    },
-    "BaseDeConhecimento-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "BaseDeConhecimento:serve"
           }
         }
       }

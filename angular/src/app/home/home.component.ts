@@ -9,13 +9,13 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 })
 export class HomeComponent extends AppComponentBase implements OnInit {
 
-  products: ["teste1", "teste2"];
+  products!: []
 
   constructor(injector: Injector) {
     super(injector);
   }
 
   ngOnInit(): void {
-    this.products = ["teste1", "teste2"]
+  
   }
 }
