@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
+using Abp.Timing;
 
 namespace BaseDeConhecimento.Articles
 {
-    public class Article : Entity<int>
+    public class Article : Entity<int>, IHasCreationTime, IHasModificationTime, IHasDeletionTime, ISoftDelete
     {
         public string Name { get; set; }
         public string Title { get; set; }
@@ -17,10 +19,13 @@ namespace BaseDeConhecimento.Articles
         public string body { get; set; }
         public string Product { get; set; }
         public string Category { get; set; }
-        public string createdAt { get; set; }
-        public string updatedAt { get; set; }
-        public string favorited {  get; set; }
-        
+        public bool IsFavorited { get; set; }
+        public DateTime CreationTime { get; set; }
+        public DateTime? DeletionTime { get; set; }
+        public DateTime? LastModificationTime { get; set; }
+        public bool IsDeleted { get; set; }
+    
+
 
     }
 }
