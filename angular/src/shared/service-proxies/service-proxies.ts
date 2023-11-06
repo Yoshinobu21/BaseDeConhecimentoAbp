@@ -2208,9 +2208,11 @@ export class ArticleDto implements IArticleDto {
     body: string | undefined;
     product: string | undefined;
     category: string | undefined;
-    createdAt: string | undefined;
-    updatedAt: string | undefined;
-    favorited: string | undefined;
+    isFavorited: boolean;
+    creationTime: moment.Moment;
+    deletionTime: moment.Moment | undefined;
+    lastModificationTime: moment.Moment | undefined;
+    isDeleted: boolean;
 
     constructor(data?: IArticleDto) {
         if (data) {
@@ -2231,9 +2233,11 @@ export class ArticleDto implements IArticleDto {
             this.body = _data["body"];
             this.product = _data["product"];
             this.category = _data["category"];
-            this.createdAt = _data["createdAt"];
-            this.updatedAt = _data["updatedAt"];
-            this.favorited = _data["favorited"];
+            this.isFavorited = _data["isFavorited"];
+            this.creationTime = _data["creationTime"] ? moment(_data["creationTime"].toString()) : <any>undefined;
+            this.deletionTime = _data["deletionTime"] ? moment(_data["deletionTime"].toString()) : <any>undefined;
+            this.lastModificationTime = _data["lastModificationTime"] ? moment(_data["lastModificationTime"].toString()) : <any>undefined;
+            this.isDeleted = _data["isDeleted"];
         }
     }
 
@@ -2254,9 +2258,11 @@ export class ArticleDto implements IArticleDto {
         data["body"] = this.body;
         data["product"] = this.product;
         data["category"] = this.category;
-        data["createdAt"] = this.createdAt;
-        data["updatedAt"] = this.updatedAt;
-        data["favorited"] = this.favorited;
+        data["isFavorited"] = this.isFavorited;
+        data["creationTime"] = this.creationTime ? this.creationTime.toISOString() : <any>undefined;
+        data["deletionTime"] = this.deletionTime ? this.deletionTime.toISOString() : <any>undefined;
+        data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toISOString() : <any>undefined;
+        data["isDeleted"] = this.isDeleted;
         return data;
     }
 
@@ -2277,9 +2283,11 @@ export interface IArticleDto {
     body: string | undefined;
     product: string | undefined;
     category: string | undefined;
-    createdAt: string | undefined;
-    updatedAt: string | undefined;
-    favorited: string | undefined;
+    isFavorited: boolean;
+    creationTime: moment.Moment;
+    deletionTime: moment.Moment | undefined;
+    lastModificationTime: moment.Moment | undefined;
+    isDeleted: boolean;
 }
 
 export class ArticleDtoPagedResultDto implements IArticleDtoPagedResultDto {

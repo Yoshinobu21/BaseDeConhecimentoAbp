@@ -9,22 +9,22 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { forEach as _forEach, includes as _includes, map as _map } from 'lodash-es';
 import { AppComponentBase } from '@shared/app-component-base';
 import {
-  ArticleServiceProxy,
-  GetArticleForEditOutput,
+  ArticlesServiceProxy,
+  // GetArticleForEditOutput,
   ArticleDto,
   PermissionDto,
-  ArticleEditDto,
+  // ArticleEditDto,
   FlatPermissionDto
 } from '@shared/service-proxies/service-proxies';
 
 @Component({
-  templateUrl: 'edit-article-dialog.component.html'
+  templateUrl: 'edit-article.component.html'
 })
-export class EditArticleDialogComponent extends AppComponentBase
+export class EditArticleComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   id: number;
-  article = new ArticleEditDto();
+  // article = new ArticleEditDto();
   permissions: FlatPermissionDto[];
   grantedPermissionNames: string[];
   checkedPermissionsMap: { [key: string]: boolean } = {};
@@ -33,21 +33,21 @@ export class EditArticleDialogComponent extends AppComponentBase
 
   constructor(
     injector: Injector,
-    private _articleService: ArticleServiceProxy,
+    private _articleService: ArticlesServiceProxy,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
   }
 
   ngOnInit(): void {
-    this._articleService
-      .getArticleForEdit(this.id)
-      .subscribe((result: GetArticleForEditOutput) => {
-        this.article = result.article;
-        this.permissions = result.permissions;
-        this.grantedPermissionNames = result.grantedPermissionNames;
-        this.setInitialPermissionsStatus();
-      });
+    // this._articleService
+    //   .getArticleForEdit(this.id)
+    //   .subscribe((result: GetArticleForEditOutput) => {
+    //     this.article = result.article;
+    //     this.permissions = result.permissions;
+    //     this.grantedPermissionNames = result.grantedPermissionNames;
+    //     this.setInitialPermissionsStatus();
+    //   });
   }
 
   setInitialPermissionsStatus(): void {
@@ -79,19 +79,19 @@ export class EditArticleDialogComponent extends AppComponentBase
   save(): void {
     this.saving = true;
 
-    const article = new ArticleDto();
-    article.init(this.article);
-    article.grantedPermissions = this.getCheckedPermissions();
+    // const article = new ArticleDto();
+    // article.init(this.article);
+    // article.grantedPermissions = this.getCheckedPermissions();
 
-    this._articleService.update(article).subscribe(
-      () => {
-        this.notify.info(this.l('SavedSuccessfully'));
-        this.bsModalRef.hide();
-        this.onSave.emit();
-      },
-      () => {
-        this.saving = false;
-      }
-    );
+    // this._articleService.update(article).subscribe(
+    //   () => {
+    //     this.notify.info(this.l('SavedSuccessfully'));
+    //     this.bsModalRef.hide();
+    //     this.onSave.emit();
+    //   },
+    //   () => {
+    //     this.saving = false;
+    //   }
+    // );
   }
 }

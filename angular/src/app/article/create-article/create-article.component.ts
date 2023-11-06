@@ -8,18 +8,18 @@ import {
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { AppComponentBase } from '@shared/app-component-base';
 import {
-  ArticleServiceProxy,
+  ArticlesServiceProxy,
   ArticleDto,
   PermissionDto,
-  CreateArticleDto,
+  // CreateArticleDto,
   PermissionDtoListResultDto
 } from '@shared/service-proxies/service-proxies';
 import { forEach as _forEach, map as _map } from 'lodash-es';
 
 @Component({
-  templateUrl: 'create-article-dialog.component.html'
+  templateUrl: 'create-article.component.html'
 })
-export class CreateArticleDialogComponent extends AppComponentBase
+export class CreateArticleComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   article = new ArticleDto();
@@ -31,19 +31,19 @@ export class CreateArticleDialogComponent extends AppComponentBase
 
   constructor(
     injector: Injector,
-    private _articleService: ArticleServiceProxy,
+    private _articleService: ArticlesServiceProxy,
     public bsModalRef: BsModalRef
   ) {
     super(injector);
   }
 
   ngOnInit(): void {
-    this._articleService
-      .getAllPermissions()
-      .subscribe((result: PermissionDtoListResultDto) => {
-        this.permissions = result.items;
-        this.setInitialPermissionsStatus();
-      });
+    // this._articleService
+    //   .getAllPermissions()
+    //   .subscribe((result: PermissionDtoListResultDto) => {
+    //     this.permissions = result.items;
+    //     this.setInitialPermissionsStatus();
+    //   });
   }
 
   setInitialPermissionsStatus(): void {
@@ -77,21 +77,21 @@ export class CreateArticleDialogComponent extends AppComponentBase
   save(): void {
     this.saving = true;
 
-    const article = new CreateArticleDto();
-    article.init(this.article);
-    article.grantedPermissions = this.getCheckedPermissions();
+    // const article = new CreateArticleDto();
+    // article.init(this.article);
+    // article.grantedPermissions = this.getCheckedPermissions();
 
-    this._articleService
-      .create(article)
-      .subscribe(
-        () => {
-          this.notify.info(this.l('SavedSuccessfully'));
-          this.bsModalRef.hide();
-          this.onSave.emit();
-        },
-        () => {
-          this.saving = false;
-        }
-      );
+    // this._articleService
+    //   .create(article)
+    //   .subscribe(
+    //     () => {
+    //       this.notify.info(this.l('SavedSuccessfully'));
+    //       this.bsModalRef.hide();
+    //       this.onSave.emit();
+    //     },
+    //     () => {
+    //       this.saving = false;
+    //     }
+    //   );
   }
 }

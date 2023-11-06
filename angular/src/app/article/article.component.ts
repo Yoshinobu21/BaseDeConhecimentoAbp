@@ -7,19 +7,19 @@ import {
   PagedRequestDto
 } from '@shared/paged-listing-component-base';
 import {
-  ArticleServiceProxy,
+  ArticlesServiceProxy,
   ArticleDto,
   ArticleDtoPagedResultDto
 } from '@shared/service-proxies/service-proxies';
-import { CreateArticleDialogComponent } from './create-article/create-article-dialog.component';
-import { EditArticleDialogComponent } from './edit-article/edit-article-dialog.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
 
 class PagedArticlesRequestDto extends PagedRequestDto {
   keyword: string;
 }
 
 @Component({
-  templateUrl: './articles.component.html',
+  templateUrl: './article.component.html',
   animations: [appModuleAnimation()]
 })
 export class ArticlesComponent extends PagedListingComponentBase<ArticleDto> {
@@ -28,7 +28,7 @@ export class ArticlesComponent extends PagedListingComponentBase<ArticleDto> {
 
   constructor(
     injector: Injector,
-    private _articlesService: ArticleServiceProxy,
+    private _articlesService: ArticlesServiceProxy,
     private _modalService: BsModalService
   ) {
     super(injector);
@@ -56,7 +56,7 @@ export class ArticlesComponent extends PagedListingComponentBase<ArticleDto> {
 
   delete(article: ArticleDto): void {
     abp.message.confirm(
-      this.l('ArticleDeleteWarningMessage', article.displayName),
+      this.l('ArticleDeleteWarningMessage', article.name),
       undefined,
       (result: boolean) => {
         if (result) {
@@ -86,14 +86,14 @@ export class ArticlesComponent extends PagedListingComponentBase<ArticleDto> {
     let createOrEditArticleDialog: BsModalRef;
     if (!id) {
       createOrEditArticleDialog = this._modalService.show(
-        CreateArticleDialogComponent,
+        CreateArticleComponent,
         {
           class: 'modal-lg',
         }
       );
     } else {
       createOrEditArticleDialog = this._modalService.show(
-        EditArticleDialogComponent,
+        EditArticleComponent,
         {
           class: 'modal-lg',
           initialState: {
