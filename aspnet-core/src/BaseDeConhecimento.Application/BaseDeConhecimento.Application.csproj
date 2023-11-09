@@ -12,6 +12,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BaseDeConhecimento.Core\BaseDeConhecimento.Core.csproj" />
   </ItemGroup>
 </Project>
