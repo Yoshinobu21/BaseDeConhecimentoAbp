@@ -19,7 +19,7 @@ import { forEach as _forEach, map as _map } from 'lodash-es';
 @Component({
   templateUrl: 'create-article.component.html'
 })
-export class CreateArticleDialogComponent extends AppComponentBase
+export class CreateArticleComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   article = new ArticleDto();

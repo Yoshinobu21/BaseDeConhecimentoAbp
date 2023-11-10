@@ -16,7 +16,7 @@
             {{ "Name" | localize }}
           </label>
           <div class="col-md-9">
-            <input
+            <!-- <input
               type="text"
               class="form-control"
               name="name"
@@ -27,11 +27,11 @@
               [(ngModel)]="article.name"
               #nameModel="ngModel"
               #nameEl
-            />
-            <abp-validation-summary
+            /> -->
+            <!-- <abp-validation-summary
               [control]="nameModel"
               [controlEl]="nameEl"
-            ></abp-validation-summary>
+            ></abp-validation-summary> -->
           </div>
         </div>
         <div class="form-group row required">
@@ -39,7 +39,7 @@
             {{ "DisplayName" | localize }}
           </label>
           <div class="col-md-9">
-            <input
+            <!-- <input
               type="text"
               class="form-control"
               name="displayName"
@@ -47,14 +47,14 @@
               required
               minlength="2"
               maxlength="32"
-              [(ngModel)]="article.name"
+              [(ngModel)]="article.displayName"
               #displayNameModel="ngModel"
               #displayNameEl
-            />
-            <abp-validation-summary
+            /> -->
+            <!-- <abp-validation-summary
               [control]="displayNameModel"
               [controlEl]="displayNameEl"
-            ></abp-validation-summary>
+            ></abp-validation-summary> -->
           </div>
         </div>
         <div class="form-group row mb-0">
@@ -62,14 +62,14 @@
             {{ "ArticleDescription" | localize }}
           </label>
           <div class="col-md-9">
-            <textarea
+            <!-- <textarea
               type="text"
               class="form-control"
               name="description"
               id="description"
               [(ngModel)]="article.description"
             >
-            </textarea>
+            </textarea> -->
           </div>
         </div>
       </tab>
@@ -78,15 +78,14 @@
           <ng-container *ngFor="let permission of permissions; let i = index">
             <div class="col-md-6">
               <div class="custom-control custom-checkbox">
-                <input
+                <!-- <input
                   type="checkbox"
                   class="custom-control-input"
                   [id]="'permission_' + i"
                   [checked]="isPermissionChecked(permission.name)"
-                  
+                  [disabled]="article.isStatic"
                   (change)="onPermissionChange(permission, $event)"
-                />
-                <!-- [disabled]="article.isStatic" -->
+                /> -->
                 <label class="custom-control-label" [for]="'permission_' + i">
                   {{ permission.displayName }}
                 </label>

@@ -40,9 +40,10 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
-import { ArticlesComponent } from './article/article.component';
-import { CreateArticleDialogComponent } from './article/create-article/create-article.component';
-import { EditArticleDialogComponent } from './article/edit-article/edit-article.component';
+import { ArticlesComponent } from '@app/article/article.component';
+import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { CreateArticleComponent } from './article/create-article/create-article.component';
+
 
 
 @NgModule({
@@ -74,12 +75,19 @@ import { EditArticleDialogComponent } from './article/edit-article/edit-article.
         SidebarLogoComponent,
         SidebarUserPanelComponent,
         SidebarMenuComponent,
-
         // Article Components
         ArticlesComponent,
-        CreateArticleDialogComponent,
-        EditArticleDialogComponent,
+        EditArticleComponent,
+        CreateArticleComponent
         
+
+       
+        
+       
+        
+     
+
+
     
     ],
     imports: [
@@ -99,6 +107,7 @@ import { EditArticleDialogComponent } from './article/edit-article/edit-article.
         TableModule,
         ButtonModule
     ],
-    providers: []
+    providers: [],
+  
 })
 export class AppModule {}

@@ -20,12 +20,11 @@ import {
 @Component({
   templateUrl: 'edit-article.component.html'
 })
-export class EditArticleDialogComponent extends AppComponentBase
+export class EditArticleComponent extends AppComponentBase
   implements OnInit {
   saving = false;
   id: number;
   // article = new ArticleEditDto();
-  article = new ArticleDto
   permissions: FlatPermissionDto[];
   grantedPermissionNames: string[];
   checkedPermissionsMap: { [key: string]: boolean } = {};
@@ -80,19 +79,19 @@ export class EditArticleDialogComponent extends AppComponentBase
   save(): void {
     this.saving = true;
 
-    const article = new ArticleDto();
+    // const article = new ArticleDto();
     // article.init(this.article);
     // article.grantedPermissions = this.getCheckedPermissions();
 
-    this._articleService.update(article).subscribe(
-      () => {
-        this.notify.info(this.l('SavedSuccessfully'));
-        this.bsModalRef.hide();
-        this.onSave.emit();
-      },
-      () => {
-        this.saving = false;
-      }
-    );
+    // this._articleService.update(article).subscribe(
+    //   () => {
+    //     this.notify.info(this.l('SavedSuccessfully'));
+    //     this.bsModalRef.hide();
+    //     this.onSave.emit();
+    //   },
+    //   () => {
+    //     this.saving = false;
+    //   }
+    // );
   }
 }

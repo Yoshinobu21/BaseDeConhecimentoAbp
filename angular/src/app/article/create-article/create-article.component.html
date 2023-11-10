@@ -39,7 +39,7 @@
             {{ "DisplayName" | localize }}
           </label>
           <div class="col-md-9">
-            <input
+            <!-- <input
               type="text"
               class="form-control"
               name="displayName"
@@ -47,14 +47,14 @@
               required
               minlength="2"
               maxlength="32"
-              [(ngModel)]="article.name"
+              [(ngModel)]="article.displayName"
               #displayNameModel="ngModel"
               #displayNameEl
-            />
-            <abp-validation-summary
+            /> -->
+            <!-- <abp-validation-summary
               [control]="displayNameModel"
               [controlEl]="displayNameEl"
-            ></abp-validation-summary>
+            ></abp-validation-summary> -->
           </div>
         </div>
         <div class="form-group row mb-0">

@@ -11,8 +11,8 @@ import {
   ArticleDto,
   ArticleDtoPagedResultDto
 } from '@shared/service-proxies/service-proxies';
-import { CreateArticleDialogComponent } from './create-article/create-article.component';
-import { EditArticleDialogComponent } from './edit-article/edit-article.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
 
 class PagedArticlesRequestDto extends PagedRequestDto {
   keyword: string;
@@ -86,14 +86,14 @@ export class ArticlesComponent extends PagedListingComponentBase<ArticleDto> {
     let createOrEditArticleDialog: BsModalRef;
     if (!id) {
       createOrEditArticleDialog = this._modalService.show(
-        CreateArticleDialogComponent,
+        CreateArticleComponent,
         {
           class: 'modal-lg',
         }
       );
     } else {
       createOrEditArticleDialog = this._modalService.show(
-        EditArticleDialogComponent,
+        EditArticleComponent,
         {
           class: 'modal-lg',
           initialState: {

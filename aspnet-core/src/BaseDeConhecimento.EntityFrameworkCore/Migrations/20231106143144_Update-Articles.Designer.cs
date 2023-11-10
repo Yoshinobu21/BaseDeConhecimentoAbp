@@ -4,6 +4,7 @@ using BaseDeConhecimento.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseDeConhecimento.Migrations
 {
     [DbContext(typeof(BaseDeConhecimentoDbContext))]
-    partial class BaseDeConhecimentoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231106143144_Update-Articles")]
+    partial class UpdateArticles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1381,9 +1384,6 @@ namespace BaseDeConhecimento.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
@@ -1412,6 +1412,9 @@ namespace BaseDeConhecimento.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("body")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
